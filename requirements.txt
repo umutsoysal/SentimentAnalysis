@@ -1,6 +1,7 @@
 sklearn
 fastapi
 pandas
+numpy==1.18.5
 pydantic
 tensorflow==2.0.0
 uvicorn
