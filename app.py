@@ -1,7 +1,9 @@
 import numpy as np
 from fastapi import FastAPI, Form
 import pandas as pd
+from fastapi.responses import HTMLResponse
 from starlette.responses import HTMLResponse
+from starlette.responses import FileResponse
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
@@ -39,6 +41,12 @@ def take_inp():
 @app.get('/')
 def basic_view():
     return {"WELCOME": "GO TO /docs route, or /post or send post request to /predict "}
+
+
+@app.get('/landing')
+async def get_legacy_data():
+    return FileResponse("sentimentimage.png")
+
 
 @app.post('/predict')
 def predict(text:str = Form(...)):
