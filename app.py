@@ -45,7 +45,7 @@ def basic_view():
 
 @app.get('/landing')
 async def get_legacy_data():
-    return FileResponse("sentimentimage.png")
+    return FileResponse("tolgasuma.png")
 
 
 @app.post('/predict')
